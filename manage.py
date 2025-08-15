@@ -11,13 +11,13 @@ def main():
     if os.getenv("ENVIRONMENT") == "production":
         os.environ.setdefault(
             "DJANGO_SETTINGS_MODULE",
-            "E-commerce.config.settings.production",
+            "Ecommerce.config.settings.production",
         )
         print(f"--> Running manage.py with production environment: {sys.argv}")
     else:
         os.environ.setdefault(
             "DJANGO_SETTINGS_MODULE",
-            "E-commerce.config.settings.development",
+            "Ecommerce.config.settings.development",
         )
         print(
             f"--> Running manage.py with \
