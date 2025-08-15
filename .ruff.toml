@@ -1,0 +1,4 @@
+# Legacy format
+lint.ignore = ["E501",]
+exclude = ["migrations/", "tests/", "settings.py", "admin.py", "tests.py", "apps.py"]
+lint.per-file-ignores = {"__init__.py" = ["F401"]}
