@@ -1,4 +1,5 @@
-from Ecommerce.apps.product.repositories import ProductRepository, ProductCategoryRepository
+from Ecommerce.apps.product.repositories import (ProductCategoryRepository,
+                                                 ProductRepository)
 
 
 class ProductService:
@@ -11,6 +12,7 @@ class ProductService:
     def search_products(queryset, filters):
         """Apply business rules to product search"""
         return ProductRepository.filter_products(queryset, **filters)
+
 
 class ProductCategoryService:
     @staticmethod

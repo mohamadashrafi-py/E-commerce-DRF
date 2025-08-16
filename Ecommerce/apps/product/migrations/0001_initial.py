@@ -5,40 +5,70 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='ProductCategoryModel',
+            name="ProductCategoryModel",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('category', models.CharField(max_length=50, unique=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("category", models.CharField(max_length=50, unique=True)),
             ],
             options={
-                'verbose_name': 'ProductCategory',
-                'verbose_name_plural': 'ProductCategories',
+                "verbose_name": "ProductCategory",
+                "verbose_name_plural": "ProductCategories",
             },
         ),
         migrations.CreateModel(
-            name='ProductModel',
+            name="ProductModel",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50, unique=True)),
-                ('description', models.TextField()),
-                ('price', models.DecimalField(decimal_places=2, max_digits=5)),
-                ('publication_status', models.CharField(choices=[('DR', 'Draft'), ('PB', 'Public')], default='DR', max_length=2)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='product_category', to='product.productcategorymodel')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50, unique=True)),
+                ("description", models.TextField()),
+                ("price", models.DecimalField(decimal_places=2, max_digits=5)),
+                (
+                    "publication_status",
+                    models.CharField(
+                        choices=[("DR", "Draft"), ("PB", "Public")],
+                        default="DR",
+                        max_length=2,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "category",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="product_category",
+                        to="product.productcategorymodel",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Product',
-                'verbose_name_plural': 'Products',
-                'ordering': ('-created_at',),
+                "verbose_name": "Product",
+                "verbose_name_plural": "Products",
+                "ordering": ("-created_at",),
             },
         ),
     ]

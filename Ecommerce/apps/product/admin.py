@@ -1,5 +1,7 @@
 from django.contrib import admin
-from Ecommerce.apps.product.models import ProductModel, ProductCategoryModel
+
+from Ecommerce.apps.product.models import ProductCategoryModel, ProductModel
+
 
 @admin.register(ProductCategoryModel)
 class ProductCategoryAdmin(admin.ModelAdmin):

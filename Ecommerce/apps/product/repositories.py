@@ -13,7 +13,9 @@ class ProductRepository:
         return ProductModel.objects.get_all_published_product()
 
     @staticmethod
-    def filter_products(queryset, search=None, category=None, min_price=None, max_price=None):
+    def filter_products(
+        queryset, search=None, category=None, min_price=None, max_price=None
+    ):
         queryset = queryset
 
         if category:
