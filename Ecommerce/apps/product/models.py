@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from Ecommerce.apps.product.managers import (ProductCategoryManager,
                                              ProductManager)
@@ -38,7 +38,7 @@ class ProductModel(models.Model):
         blank=True,
     )
     description = models.TextField()
-    price = models.DecimalField(decimal_places=2)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
     publication_status = models.CharField(
         choices=PUBLICATION_STATUS, max_length=2, default="DR"
     )
