@@ -2,7 +2,8 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
-from Ecommerce.apps.product.managers import ProductCategoryManager, ProductManager
+from Ecommerce.apps.product.managers import (ProductCategoryManager,
+                                             ProductManager)
 
 
 class ProductCategoryModel(models.Model):
