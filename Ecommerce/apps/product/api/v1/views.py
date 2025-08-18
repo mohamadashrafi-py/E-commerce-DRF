@@ -23,6 +23,13 @@ class ProductListView(APIView):
                 "max_price": max_price,
             },
         )
-        serializer = serializers.ProductSerializer(queryset, many=True)
+        serialized_data = serializers.ProductSerializer(queryset, many=True)
 
-        return Response(data={"response": serializer.data})
+        return Response(data={"response": serialized_data.data})
+
+
+class ProductDetailView(APIView):
+    def get(self, request, pk):
+        product = ProductService.get_product(pk)
+        serialized_data = serializers.ProductSerializer(instance=product)
+        return Response(data={"response": serialized_data.data})

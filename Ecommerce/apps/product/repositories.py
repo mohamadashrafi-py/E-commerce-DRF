@@ -1,5 +1,5 @@
 from Ecommerce.apps.product.models import ProductCategoryModel, ProductModel
-
+from django.http import Http404
 
 class ProductCategoryRepository:
     @staticmethod
@@ -28,3 +28,10 @@ class ProductRepository:
             queryset.filter_by_price(min_price, max_price)
 
         return queryset
+
+    @staticmethod
+    def get_product(pk):
+        try:
+            return ProductModel.objects.get(pk=pk)
+        except ProductModel.DoesNotExist:
+            raise Http404("No product found")

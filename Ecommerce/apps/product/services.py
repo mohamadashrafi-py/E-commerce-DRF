@@ -12,6 +12,11 @@ class ProductService:
     def search_products(queryset, filters):
         """Apply business rules to product search"""
         return ProductRepository.filter_products(queryset, **filters)
+    
+    @staticmethod
+    def get_product(pk):
+        """Return product object by pk"""
+        return ProductRepository.get_product(pk)
 
 
 class ProductCategoryService:
