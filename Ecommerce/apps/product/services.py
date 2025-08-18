@@ -21,6 +21,6 @@ class ProductService:
 
 class ProductCategoryService:
     @staticmethod
-    def get_all_products():
+    def get_all_categories():
         """Return all product categories"""
         return ProductCategoryRepository.get_all_categories()
