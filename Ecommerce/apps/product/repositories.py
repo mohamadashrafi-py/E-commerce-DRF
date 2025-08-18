@@ -1,5 +1,7 @@
-from Ecommerce.apps.product.models import ProductCategoryModel, ProductModel
 from django.http import Http404
+
+from Ecommerce.apps.product.models import ProductCategoryModel, ProductModel
+
 
 class ProductCategoryRepository:
     @staticmethod
