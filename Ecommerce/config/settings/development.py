@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Add your apps here:
     "Ecommerce.apps.core",
     "Ecommerce.apps.product",
+    "Ecommerce.apps.accounts",
 ]
 
 MIDDLEWARE = [
