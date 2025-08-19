@@ -23,5 +23,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # Apps urls
     # path("", include("Ecommerce.apps.core.urls"), name="apps_core_urls"),
-    path("", include("Ecommerce.apps.product.urls"), name="apps_app1_urls"),
+    path("", include("Ecommerce.apps.product.urls"), name="product"),
+    path("accounts/", include("Ecommerce.apps.accounts.urls"), name="accounts"),
 ]
